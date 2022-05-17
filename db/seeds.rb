@@ -21,13 +21,13 @@ Course.create(titulo: "Nutricion", duracion: 15, detalle: "La educación nutrici
 Course.create(titulo: "Introduccion a las nuevas tecnologias", duracion: 35, detalle: "Las 'nuevas tecnologías' son aquellas corrientes tecnológicas que están marcando un cambio en el modelo industrial y social en la economía global. En otras palabras, consiste en un conjunto de tecnologías de temprana creación o desarrollo que forman parte de la denominada 'revolución digital'.")
 Course.create(titulo: "Matematica", duracion: 50, detalle: "La mayoría de las personas pensamos que las matemáticas sólo se tratan de números para realizar operaciones como sumas, restas, multiplicaciones, fracciones, etc. Sin embargo, sus funciones están directamente relacionadas con nuestras actividades diarias.")
 
-url_section_1 = "https://www.youtube.com/watch?v=F6rruydac9I"
-url_section_2 = "https://www.youtube.com/watch?v=ALlSherR2ss"
+url_section_1 = URI.open("https://www.youtube.com/watch?v=F6rruydac9I")
+url_section_2 = URI.open("https://www.youtube.com/watch?v=ALlSherR2ss")
 
-section_1 = Section.create(nombre: "Modulo 1", descripcion: "Educación Financiera: 'La Inversión'", url_cloudinary: url_section_1, course_id: curso1)
-section_2 = Section.create(nombre: "Modulo 2", descripcion: "Educación Financiera: 'Calidad de Vida y Educación Financiera'", url_cloudinary: url_section_2, course_id: curso1)
+section_1 = Section.create(nombre: "Modulo 1", descripcion: "Educación Financiera: 'La Inversión'", url_cloudinary: url_section_1, course: curso1)
+section_2 = Section.create(nombre: "Modulo 2", descripcion: "Educación Financiera: 'Calidad de Vida y Educación Financiera'", url_cloudinary: url_section_2, course: curso1)
 
 # Modulo 1
-quiz_1 = Quiz.create(nombre: "Quiz Modulo 1", section_id: section_1, pregunta:"Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?", respuesta: "true; false; true")
+quiz_1 = Quiz.create(nombre: "Quiz Modulo 1", section: section_1, preguntas:"Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?", respuestas: "true; false; true")
 # Modulo 2
-quiz_2 = Quiz.create(nombre: "Quiz Modulo 2", section_id: section_2, pregunta:"Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?", respuesta: "true; false; true")
+quiz_2 = Quiz.create(nombre: "Quiz Modulo 2", section: section_2, preguntas:"Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?", respuestas: "true; false; true")

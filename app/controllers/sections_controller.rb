@@ -1,5 +1,6 @@
 class SectionsController < ApplicationController
   def show
-    @course = Course.find(params[:id])
+    @section = Section.find(params[:id])
+    @quiz = @section.quiz
   end
 end

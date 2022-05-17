@@ -1,2 +1,13 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+<h1> Mis Cursos </h1>
+
+<div class="container">
+  <% @courses.each do |course| %>
+    <ul>
+    <%# Esto va en formato de card %>
+    <%# Ver cómo hacer el link para ir a los modulos de la clase, si agregar botón, hacer el titulo clickeable o toda la card %>
+      <li><%=link_to course.titulo, course_path(course)%></li>
+      <li><%=course.duracion  %></li>
+      <li><%=course.detalle %></li>
+    </ul>
+    <% end %>
+</div>
