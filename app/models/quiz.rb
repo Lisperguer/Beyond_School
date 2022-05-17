@@ -1,4 +1,6 @@
 class Quiz < ApplicationRecord
   belongs_to :section
-  has_many :quizzes
+  has_many :quiz_statuses
+
+
 end

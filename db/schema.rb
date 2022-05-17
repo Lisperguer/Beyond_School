@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_17_160229) do
+ActiveRecord::Schema.define(version: 2022_05_17_193012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2022_05_17_160229) do
     t.text "detalle"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "quiz_statuses", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "quiz_id", null: false
+    t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quiz_id"], name: "index_quiz_statuses_on_quiz_id"
+    t.index ["user_id"], name: "index_quiz_statuses_on_user_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -60,10 +70,17 @@ ActiveRecord::Schema.define(version: 2022_05_17_160229) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.integer "age"
+    t.string "school"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "quiz_statuses", "quizzes"
+  add_foreign_key "quiz_statuses", "users"
   add_foreign_key "quizzes", "sections"
   add_foreign_key "sections", "courses"
   add_foreign_key "user_courses", "courses"
