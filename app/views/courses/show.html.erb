@@ -1,2 +1,18 @@
 <h1>Courses#show</h1>
 <p>Find me in app/views/courses/show.html.erb</p>
+
+
+
+<ul>
+  <li><%= @course.titulo %></li>
+  <li><%= @course.duracion %></li>
+  <li><%= @course.detalle %></li>
+</ul>
+
+<ul class="list-group">
+  <% @course.sections.each do |section| %>
+    <li class="list-group-item"><%= section.nombre %></li>
+    <li class="list-group-item"><%= section.descripcion %></li>
+    <div class="btn btn-alert"><%= link_to "comenzar curso", section_path(section) %></div>
+  <% end %>
+</ul>

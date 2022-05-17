@@ -1,2 +1,9 @@
-<h1>Sections#show</h1>
-<p>Find me in app/views/sections/show.html.erb</p>
+<h1>Acá va el video</h1>
+
+<%# Hacer la configuracion de cloudinary para video %>
+<%# <%= @section.url_cloudinary.key %> %>
+
+<%= @section.descripcion %>
+<div class="btn btn-alert"><%= link_to "Empezar quiz", quiz_path(@quiz) %></div>
+
+
