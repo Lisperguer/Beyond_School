@@ -1,11 +1,17 @@
-<div class="banner">
-  <div class="container">
+<div class="banner" style="background-image: url('assets/background.png')">
+  <div class="container_uno p-5">
+
     <h1>Aprende de todo</h1>
     <p>Lo que no se enseña en el colegio y más</p>
-    <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-primary' %></a>
-    <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-primary' %></a>
+
+    <% unless user_signed_in? %>
+      <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-outline-primary' %></a>
+    <% end %>
+    <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-outline-primary' %></a>
+
   </div>
 </div>
+
 
 <div class="container">
 
@@ -27,5 +33,3 @@
     </div>
 
  </div>
-
-<%= render 'shared/footer' %>
