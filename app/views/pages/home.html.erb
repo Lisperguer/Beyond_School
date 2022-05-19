@@ -25,7 +25,11 @@
           <div class="calle">
             <h2 class="text-center"><%= course.titulo.capitalize %></h2>
             <p>Duración: <%= course.duracion %> hrs.</p>
-            <%= link_to "Ver el Curso", courses_show_path(course) %>
+            <% unless user_signed_in? %>
+              <%= link_to "Ver el Curso", new_user_session_path %>
+            <% else %>
+             <%= link_to "Ver el Curso", course_path(course) %>
+            <% end %>
           </div>
         </div>
       <% end %>
