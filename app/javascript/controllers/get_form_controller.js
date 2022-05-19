@@ -8,43 +8,21 @@ export default class extends Controller {
   }
 
 
-  revealContent1(event) {
-    let click1 = []
-    event.preventDefault()
-    this.contentTargets.forEach((element) => {
-      console.log(element)
-      click1.push(1)
-    });
-    console.log(click1)
-  }
-
-  revealContent2(event) {
-    let click2 = []
-    event.preventDefault()
-    this.contentTargets.forEach((element) => {
-      console.log(element)
-      click2.push(1)
-    });
-    console.log(click2)
-  }
-
-  revealContent3(event) {
-    let click3 = []
-    event.preventDefault()
-    this.contentTargets.forEach((element) => {
-      console.log(element)
-      click3.push(1)
-    });
-    console.log(click3)
-  }
-
   revealContent4(event) {
-    let click4 = []
+    let click3 = []
+    const mensaje = document.getElementById("mensaje")
     event.preventDefault()
     this.contentTargets.forEach((element) => {
-      console.log(element)
-      click4.push(1)
+      click3.push(this.contentTarget)
     });
-    console.log(click4)
-  }
-}
+    if (click3[0][0].checked === true && click3[0][3].checked === true && click3[0][7].checked === true) {
+      alert("Aprobaste el modulo!")
+      window.location.href='/sections/4'
+
+    }
+    else {
+      alert("No aprobaste el modulo, vuelve a revisar el contenido")
+      window.location.href='/sections/3'
+
+    }
+  }}
