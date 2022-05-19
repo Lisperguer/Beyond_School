@@ -1,0 +1,70 @@
+
+.card1 {
+  display: flex;
+  justify-content: space-between;
+}
+.carta {
+  width: 300px;
+  height: 450px;
+  border: 0  0 solid;
+  box-shadow: 0px 3px 10px rgb(68, 59, 59);
+  border-radius: 3px;
+  margin: 10px;
+  position: relative;
+}
+
+.carta img {
+  width: 300px;
+  height: 250px;
+  background-color: white;
+}
+.carta h2 {
+  padding: 0 10px;
+}
+
+p {
+  padding: 15px;
+}
+
+.info a {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 120px;
+  border: 2px solid;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.info a:hover {
+  background-color: #0DA9DD;
+  color: white;
+  transition: 0.3;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-bottom: 30px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner {
+  background-image: url('edu3.jpg');
+}
