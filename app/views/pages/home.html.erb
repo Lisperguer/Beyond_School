@@ -5,3 +5,49 @@
     <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_session_path,class: 'btn btn-secondary' %></a>
   </div>
 </div>
+
+<div class="container">
+  <div>
+    <div class="card1">
+
+      <div class="carta">
+        <%= image_tag "tecnologias.jpg" %>
+        <div class="info">
+          <h2 class="text-center">Introduccion a las nuevas tecnologias</h2>
+          <p>Tendencias, Tips, seguridad y privacidad</p>
+          <a href="#">ver el curso</a>
+        </div>
+      </div>
+
+       <div class="carta">
+        <%= image_tag "Educacion-financiera.jpg" %>
+        <div class="info">
+          <h2 class="text-center">Educacion Financiera</h2>
+          <p>EL dinero, Ahorro, Inversion, Impuestos</p>
+          <a href="#">ver el curso</a>
+        </div>
+      </div>
+
+       <div class="carta">
+        <%= image_tag "nutricion.jpg" %>
+        <div class="info">
+          <h2 class="text-center">Nutricion y Salud</h2>
+          <p>Buenos habitos alimenticios, Medicina natural, La obesidad, Deportes/Ejercicios </p>
+          <a href="#">ver el curso</a>
+        </div>
+      </div>
+
+       <div class="carta">
+        <%= image_tag "sexualidad_ninos.png" %>
+        <div class="info">
+          <h2 class="text-center">Sexualidad</h2>
+          <p>en la china habia dos chinitos, que comian el arroz con dos palitos</p>
+          <a href="#">ver el curso</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ </div>
+
+<%= render 'shared/footer' %>
