@@ -1,13 +1,43 @@
 <h1> Mis Cursos </h1>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card-product mb-5">
+        <div class="foto">
+          <img src="https://www.clinicasabortos.com/images/blog/1600940676023-educacion-sexual.jpg" />
+        </div>
+        <div class="card-product-infos p-5">
+          <div class="card-superior">
+            <h2>Educación Sexual</h2>
+            <p> <strong>Duracion del curso</strong> 10 horas</p>
+          </div>
+          <div class="card-inferior">
+            <p>La educación sexual es muy importante, ya que esta proporciona la información y las herramientas necesarias para disfrutar del sexo de manera responsable y saludables</p>
+          </div>
+          <div class="boton-card text-center">
+            <div class="btn btn-dark pt-2">Ir a clase</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
   <% @courses.each do |course| %>
     <ul>
-    <%# Esto va en formato de card %>
-    <%# Ver cómo hacer el link para ir a los modulos de la clase, si agregar botón, hacer el titulo clickeable o toda la card %>
-      <li><%=link_to course.titulo, course_path(course)%></li>
-      <li><%=course.duracion  %></li>
-      <li><%=course.detalle %></li>
+      <%# Esto va en formato de card %>
+        <%# Ver cómo hacer el link para ir a los modulos de la clase, si agregar botón, hacer el titulo clickeable o
+          toda la card %>
+          <li>
+            <%=link_to course.titulo, course_path(course)%>
+          </li>
+          <li>
+            <%=course.duracion %>
+          </li>
+          <li>
+            <%=course.detalle %>
+          </li>
     </ul>
     <% end %>
 </div>
+
