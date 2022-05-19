@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @courses = Course.all
@@ -10,8 +10,8 @@ class CoursesController < ApplicationController
   end
 
   private
+
   def course_params
     params.require(:course).permit(:titulo, :duracion, :detalle)
   end
-
 end

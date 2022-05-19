@@ -2,53 +2,30 @@
   <div class="container">
     <h1>Aprende de todo</h1>
     <p>Lo que no se enseña en el colegio y más</p>
-    <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-outline-primary' %></a>
-    <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-outline-primary' %></a>
+    <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-primary' %></a>
+    <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-primary' %></a>
   </div>
 </div>
 
 <div class="container">
-  <div>
+
     <div class="card1">
+      <div class="row justify-content-between">
+      <% @courses.each do |course| %>
+        <div class="carta col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
 
-      <div class="carta">
-        <%= image_tag "tecnologias.jpg" %>
-        <div class="info">
-          <h2 class="text-center">Introduccion a las nuevas tecnologias</h2>
-          <p>Tendencias, Tips, seguridad y privacidad</p>
-          <a href="/courses/4">ver el curso</a>
+          <%= image_tag "Educacion-financiera.jpg" %>
+
+          <div class="calle">
+            <h2 class="text-center"><%= course.titulo.capitalize %></h2>
+            <p>Duración: <%= course.duracion %> hrs.</p>
+            <%= link_to "Ver el Curso", courses_show_path(course) %>
+          </div>
         </div>
+      <% end %>
       </div>
-
-       <div class="carta">
-        <%= image_tag "Educacion-financiera.jpg" %>
-        <div class="info">
-          <h2 class="text-center">Educacion Financiera</h2>
-          <p>EL dinero, Ahorro, Inversion, Impuestos</p>
-          <a href="/courses/2">ver el curso</a>
-        </div>
-      </div>
-
-       <div class="carta">
-        <%= image_tag "nutricion.jpg" %>
-        <div class="info">
-          <h2 class="text-center">Nutricion y Salud</h2>
-          <p>Buenos habitos alimenticios, Medicina natural, La obesidad, Deportes/Ejercicios </p>
-          <a href="/courses/3">ver el curso</a>
-        </div>
-      </div>
-
-       <div class="carta">
-        <%= image_tag "sexualidad_ninos.png" %>
-        <div class="info">
-          <h2 class="text-center">Sexualidad</h2>
-          <p>en la china habia dos chinitos, que comian el arroz con dos palitos</p>
-          <a href="/courses/1">ver el curso</a>
-        </div>
-      </div>
-
     </div>
-  </div>
+
  </div>
 
 <%= render 'shared/footer' %>

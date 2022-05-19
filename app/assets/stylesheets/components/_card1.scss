@@ -1,7 +1,6 @@
 
 .card1 {
-  display: flex;
-  justify-content: space-between;
+
 }
 .carta {
   width: 300px;
@@ -11,6 +10,7 @@
   border-radius: 3px;
   margin: 10px;
   position: relative;
+  padding: 0;
 }
 
 .carta img {
@@ -22,11 +22,14 @@
   padding: 0 10px;
 }
 
-p {
+.carta p {
   padding: 15px;
+  position: absolute;
+  bottom: 20px;
+
 }
 
-.info a {
+.calle a {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -37,7 +40,7 @@ p {
   border-radius: 5px;
 }
 
-.info a:hover {
+.calle a:hover {
   background-color: #0DA9DD;
   color: white;
   transition: 0.3;
@@ -61,10 +64,12 @@ p {
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .banner {
   background-image: url('background.png');
+}
+.gol {
+  font-size: 20px;
 }
