@@ -15,7 +15,7 @@
               <p><%= course.detalle %></p>
             </div>
               <div>
-                <button type="button" class="btn btn-dark pt-2 text-center"><%= link_to "Comenzar este curso", course_path(course) %></button>
+                <%= link_to "Comenzar este curso", course_path(course), class:"btn btn-outline-dark" %>
               </div>
           </div>
         </div>
