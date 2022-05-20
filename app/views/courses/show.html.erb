@@ -1,18 +1,47 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<div class="banner">
+  <div class="container_uno p-5">
+    <div class="row course">
+      <div class="col-6">
+        <h1>
+          <%= @course.titulo %>
+        </h1>
+        <p> <strong>Duracion del curso</strong>
+          <%= @course.duracion %> hrs
+        </p>
+        <h6>
+          <%= @course.detalle %>
+        </h6>
+      </div>
+      <div class="col-6 text-center">
+        <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<div class="container">
+  <div class="card1">
+    <div class="row justify-content-evenly">
+      <% @course.sections.each do |section| %>
+        <div class="carta">
+          <%= image_tag "Educacion-financiera.jpg" %>
+            <div class="calle">
+              <h2 class="text-center">
+                <%= section.nombre.capitalize %>
+              </h2>
+              <p>
+                <%= section.descripcion %>
+              </p>
+              <% unless user_signed_in? %>
+                <%= link_to "Iniciar Módulo" , new_user_session_path %>
+              <% else %>
+                <%= link_to "Iniciar Módulo" , section_path(section) %>
+              <% end %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
 
-<ul>
-  <li><%= @course.titulo %></li>
-  <li><%= @course.duracion %></li>
-  <li><%= @course.detalle %></li>
-</ul>
-
-<ul class="list-group">
-  <% @course.sections.each do |section| %>
-    <li class="list-group-item"><%= section.nombre %></li>
-    <li class="list-group-item"><%= section.descripcion %></li>
-    <div class="btn btn-alert"><%= link_to "comenzar curso", section_path(section) %></div>
-  <% end %>
-</ul>
+</div>
