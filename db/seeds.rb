@@ -28,6 +28,17 @@ section_1 = Section.create(nombre: "Modulo 1", descripcion: "Educación Financie
 section_2 = Section.create(nombre: "Modulo 2", descripcion: "Educación Financiera: 'Calidad de Vida y Educación Financiera'", url_cloudinary: url_section_2, course: curso1)
 
 # Modulo 1
-quiz_1 = Quiz.create(nombre: "Quiz Modulo 1", section: section_1, preguntas:"¿Qué es una inversión?; ¿Qué hay que tener en cuent a la hora de invertir?; ¿Cuál es la mejor inversión?", respuestas: "Destinar una parte del ingreso con el propósito de aumentar el monto inicial, algo falso pregunta 1, otra cosa falsa pregunta 1; Rendimiento - Riesgo - Plazo,  algo falso pregunta 2, otra cosa falsa pregunta 2; El estudio,  algo falso pregunta 3, otra cosa falsa pregunta 3")
+quiz_1 = Quiz.create(nombre: "Quiz Modulo 1", section: section_1,
+  preguntas:"¿Qué es una inversión?;
+  ¿Qué hay que tener en cuent a la hora de invertir?;
+  ¿Cuál es la mejor inversión?",
+  respuestas: "Destinar una parte del ingreso con el propósito de aumentar el monto inicial, algo falso pregunta 1, otra cosa falsa pregunta 1;
+  Rendimiento - Riesgo - Plazo,  algo falso pregunta 2, otra cosa falsa pregunta 2;
+  El estudio,  algo falso pregunta 3, otra cosa falsa pregunta 3")
+  
 # Modulo 2
-quiz_2 = Quiz.create(nombre: "Quiz Modulo 2", section: section_2, preguntas:"Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?", respuestas: "true; false; true")
+quiz_2 = Quiz.create(nombre: "Quiz Modulo 2", section: section_2,
+  preguntas:"Ahorrar en pesos es considerada una inversion?;
+  Ahorrar en pesos es considerada una inversion?;
+  Ahorrar en pesos es considerada una inversion?",
+  respuestas: "true; false; true")
