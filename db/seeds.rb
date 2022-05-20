@@ -38,8 +38,8 @@ url4 = "https://res.cloudinary.com/dydeg1evr/image/upload/v1652999186/developmen
 curso4.photo.attach(io: URI.open(url4), filename: "mathematics_ovoibd.jpg", content_type: "image/jpeg")
 curso4.save
 
-url_section_1 = URI.open("https://www.youtube.com/watch?v=F6rruydac9I")
-url_section_2 = URI.open("https://www.youtube.com/watch?v=ALlSherR2ss")
+url_section_1 = "https://www.youtube.com/embed/F6rruydac9I"
+url_section_2 = "https://www.youtube.com/embed/ALlSherR2ss"
 
 section_1 = Section.create(nombre: "Modulo 1", descripcion: "Educación Financiera: 'La Inversión'", url_cloudinary: url_section_1, course: curso1)
 section_2 = Section.create(nombre: "Modulo 2", descripcion: "Educación Financiera: 'Calidad de Vida y Educación Financiera'", url_cloudinary: url_section_2, course: curso1)
