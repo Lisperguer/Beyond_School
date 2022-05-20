@@ -44,7 +44,10 @@ url_section_2 = URI.open("https://www.youtube.com/watch?v=ALlSherR2ss")
 section_1 = Section.create(nombre: "Modulo 1", descripcion: "Educación Financiera: 'La Inversión'", url_cloudinary: url_section_1, course: curso1)
 section_2 = Section.create(nombre: "Modulo 2", descripcion: "Educación Financiera: 'Calidad de Vida y Educación Financiera'", url_cloudinary: url_section_2, course: curso1)
 
+# section_1.video.attach(io: URI.open(url_section_1), filename: 'raymeVideo.mp4', content_type: 'video/mp4'))
+# section_1.save
+
 # Modulo 1
-quiz_1 = Quiz.create(nombre: "Quiz Modulo 1", section: section_1, preguntas:"¿Qué es una inversión?; ¿Qué hay que tener en cuent a la hora de invertir?; ¿Cuál es la mejor inversión?", respuestas: "Destinar una parte del ingreso con el propósito de aumentar el monto inicial, algo falso pregunta 1, otra cosa falsa pregunta 1; Rendimiento - Riesgo - Plazo,  algo falso pregunta 2, otra cosa falsa pregunta 2; El estudio,  algo falso pregunta 3, otra cosa falsa pregunta 3")
+quiz_1 = Quiz.create(nombre: "Quiz Modulo 1", section: section_1, preguntas:"¿Qué es una inversión?; ¿Qué hay que tener en cuenta la hora de invertir?; ¿Cuál es la primera mejor inversión?", respuestas: "Destinar una parte del ingreso con el propósito de aumentar el monto inicial, Destinar todo mi salario a un proyecto nuevo, Endeudarme para aumentar mi monto inicial a futuro; Rendimiento - Riesgo - Plazo,  Rendimiento - Recaudación - Plazo, Recaudación - Plazo - Riesgo; Inmuebles, Acciones, El estudio")
 # Modulo 2
-quiz_2 = Quiz.create(nombre: "Quiz Modulo 2", section: section_2, preguntas:"Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?; Ahorrar en pesos es considerada una inversion?", respuestas: "true; false; true")
+quiz_2 = Quiz.create(nombre: "Quiz Modulo 2", section: section_2, preguntas:"¿Qué no hay que sobrepasar para tener una buena calidad de vida?; ¿Qué implica ser un consumidor responsable?; ¿Cuál de estas opciones NO esta relacionada con ?", respuestas: "El nivel de endeudamiento, El salario, La hipoteca; Estudiar el mercado antes de consumir, Consumir y después analizar, Consumir todos mis ingresos; Optimizar el presupuesto, Analizar la información de los productos o servicios, Comprar lo que me dicen las pautas publicitarias")
