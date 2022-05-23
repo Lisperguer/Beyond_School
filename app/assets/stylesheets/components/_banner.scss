@@ -1,12 +1,13 @@
 .banner {
   background-size: cover;
-background-position: center;
-// display:flex;
-// justify-content: center;
-align-items: center;
-height: 500px;
-padding-top: 180px;
-padding-left: 100px;
+  background-position: center;
+  object-fit: contain;
+  // display:flex;
+  // justify-content: center;
+  align-items: center;
+  height: 500px;
+  padding-top: 180px;
+  padding-left: 100px;
 }
 
 .banner .container_uno{
