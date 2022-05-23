@@ -12,35 +12,48 @@
   </header>
 
   <section>
-    <div class="container">
-    <%= simple_form_for QuizStatus.new do |f| %>
-      <%= simple_fields_for :current_section do |o| %>
-       <%= o.input :r, :as => :hidden, input_html: {value: @quiz.section.id} %>
+    <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div>
+
+      </div>
+    <div class="container" id="form-container">
+      <%= simple_form_for QuizStatus.new do |f| %>
+        <%= simple_fields_for :current_section do |o| %>
+        <%= o.input :r, :as => :hidden, input_html: {value: @quiz.section.id} %>
+        <% end %>
+
+        <p><%= arrayPreguntas[0] %></p>
+        <%= simple_fields_for :pregunta_a do |o| %>
+          <input type="checkbox" id="miElementoCheckbox"><p><%=arrayRespuestas2[0][0]  %></p>
+          <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[0][0], wrapper_html: { id: 'miElementoCheckbox' } %>
+          <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[0][1] %>
+          <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[0][2] %>
+        <% end %> <br>
+
+        <p><%= arrayPreguntas[1] %></p>
+        <%= simple_fields_for :pregunta_b do |o| %>
+          <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[1][0] %>
+          <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[1][1] %>
+          <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[1][2] %>
+        <% end %> <br>
+
+        <p><%= arrayPreguntas[2] %></p>
+        <%= simple_fields_for :pregunta_c do |o| %>
+          <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[2][0] %>
+          <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[2][1] %>
+          <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[2][2] %>
+        <% end %> <br>
+        <%= f.submit class: "btn btn-primary"%>
+        <button id="myBtn">Open Modal</button>
       <% end %>
 
-      <p><%= arrayPreguntas[0] %></p>
-      <%= simple_fields_for :pregunta_a do |o| %>
-        <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[0][0] %>
-        <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[0][1] %>
-        <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[0][2] %>
-      <% end %> <br>
 
-      <p><%= arrayPreguntas[1] %></p>
-      <%= simple_fields_for :pregunta_b do |o| %>
-        <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[1][0] %>
-        <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[1][1] %>
-        <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[1][2] %>
-      <% end %> <br>
-
-      <p><%= arrayPreguntas[2] %></p>
-      <%= simple_fields_for :pregunta_c do |o| %>
-        <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[2][0] %>
-        <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[2][1] %>
-        <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[2][2] %>
-      <% end %> <br>
-
-      <%= f.submit class: "btn btn-primary" %>
-    <% end %>
     </div>
 
 
@@ -48,3 +61,6 @@
 <br>
   <div class="btn"><%= link_to "Volver al modulo",section_path(@section)  %></div>
 </div>
+
+
+<%= javascript_pack_tag 'my_js' %>
