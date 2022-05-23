@@ -1,21 +1,23 @@
 <div class="container">
   <% @courses.each do |course| %>
     <div class="row justify-content-center">
-      <div class="col-6">
+      <div class="col-8">
         <div class="card-product mb-5">
           <div class="foto">
-            <%= cl_image_tag course.photo.key, style: "height: 200px; width: 100%;"%>
+            <%= cl_image_tag course.photo.key%>
           </div>
           <div class="card-product-infos p-5">
             <div class="card-superior">
               <h2><%=course.titulo%></h2>
-              <p> <strong>Duracion del curso    </strong><%=course.duracion%> minutos</p>
+              <p> <strong>Duracion del curso</strong><%=course.duracion%> minutos</p>
             </div>
             <div class="card-inferior">
-              <p><%= course.detalle %></p>
+              <p><%= course.detalle.truncate(150) %></p>
             </div>
               <div>
-                <%= link_to "Comenzar este curso", course_path(course), class:"btn btn-outline-dark" %>
+
+              <%= link_to "Comenzar este curso", course_path(course), class: "btn btn-primary mt-3 float-end" %>
+
               </div>
           </div>
         </div>
