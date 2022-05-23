@@ -11,6 +11,13 @@
   margin: 10px;
   position: relative;
   padding: 0;
+  transition: transform 1.5s;
+}
+
+.carta:hover{
+  // transform: translateZ(5px)
+  // rotateX(20deg) rotateY(30deg);
+  transform: scale(1.02);
 }
 
 .carta img {

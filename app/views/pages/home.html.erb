@@ -12,31 +12,51 @@
   </div>
 </div>
 
-
-
 <div class="container">
-
-    <div class="card1">
-      <div class="row justify-content-between">
+  <div class="card1">
+    <div class="row justify-content-between">
       <% @courses.each do |course| %>
-        <div class="carta col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-          <% if course.photo.key %>
-            <%= cl_image_tag course.photo.key, style: "height: 200px; width: 100%;"%>
-          <% else %>
-          <%= image_tag "Educacion-financiera.jpg" %>
-          <% end %>
-          <div class="calle">
-            <h2 class="text-center"><%= course.titulo.capitalize %></h2>
-            <p>Duración: <%= course.duracion %> hrs.</p>
-            <% unless user_signed_in? %>
-              <%= link_to "Ver el Curso", new_user_session_path %>
-            <% else %>
-             <%= link_to "Ver el Curso", course_path(course) %>
-            <% end %>
-          </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+          <% unless user_signed_in? %>
+            <%= link_to new_user_session_path do %>
+              <section class="cards3d p-3">
+                <figure class="card3d">
+                  <figcaption class="card-title3d">
+                    <% if course.photo.key %>
+                      <%= cl_image_tag course.photo.key, style: "height: 150px; width: 100%; object-fit: contain;"%>
+                    <% else %>
+                      <%= image_tag "Educacion-financiera.jpg" %>
+                    <% end %>
+                  <div class="calle">
+                    <h2 class="text-center" style="text-decoration: none"><%= course.titulo.capitalize %></h2>
+                    <p class="text-center" style="text-decoration: none">Duración: <%= course.duracion %> hrs.</p>
+                  </div>
+                </figcaption>
+            </figure>
+          </section>
+        <% end %>
+      <% else %>
+       <%= link_to course_path(course) do %>
+        <section class="cards3d p-3">
+          <figure class="card3d">
+            <figcaption class="card-title3d">
+              <% if course.photo.key %>
+                <%= cl_image_tag course.photo.key, style: "height: 200px; width: 100%; object-fit: contain;"%>
+              <% else %>
+                <%= image_tag "Educacion-financiera.jpg" %>
+              <% end %>
+            <div class="calle">
+              <h2 class="text-center"><%= course.titulo.capitalize %></h2>
+              <p class="text-center">Duración: <%= course.duracion %> hrs.</p>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
+    <% end %>
+    <% end %>
         </div>
-      <% end %>
-      </div>
-    </div>
-
+  <% end %>
+</div>
+</div>
+</div>
  </div>
