@@ -45,3 +45,14 @@
   </div>
 
 </div>
+
+<div class="container">
+  <% @course.reviews.each do |review| %>
+      <p><%=  review.id %></p>
+      <p><%= review.comentario %></p>
+      <p><%= review.rating %></p>
+      
+
+  <% end %>
+  <br>
+</div>
