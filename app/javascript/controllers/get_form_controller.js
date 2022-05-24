@@ -8,6 +8,7 @@ export default class extends Controller {
   }
 
 
+
   revealContent4(event) {
     let click3 = []
     const mensaje = document.getElementById("mensaje")
