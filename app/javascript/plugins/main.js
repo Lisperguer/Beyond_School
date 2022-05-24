@@ -7,7 +7,9 @@ import Ui from "../models/Ui.js";
 const renderPage = (quiz, ui) => {
   if (quiz.isEnded()) {
     if (quiz.score >= quiz.questions.length*0.8){
-      console.log("Has aprobado el curso")
+      // console.log("Has aprobado el curso")
+      swal("Hello world!");
+
       ui.showScores(quiz.score);
     }
     else{
@@ -35,6 +37,6 @@ const renderPage = (quiz, ui) => {
     });
 
   }
- 
+ main();
   export default main
 

@@ -1,6 +1,9 @@
 
 export default class Ui {
-  constructor() {}
+  
+  constructor() {
+
+  }
 
   /**
    *
@@ -44,7 +47,7 @@ export default class Ui {
   }
 
   desaprovado(score){
-    //Insertar el sweetalert acá y poner en el else del main
+    //Insertar el sweetalert acá y poner en el else del main  
   }
   /**
   *
