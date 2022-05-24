@@ -1,24 +1,62 @@
-
-  <div class="body-quizz">
+<% arrayPreguntas = @quiz.preguntas.split(";") %>
+<% arrayRespuestas1 = @quiz.respuestas.split(";") %>
+<% arrayRespuestas2 = [] %>
+<%arrayRespuestas1.each do |r| %>
+  <%arrayRespuestas2.push(r.split(","))  %>
+    <% end %>
+<div class="container">
+  <header>
+    <h1><%=@quiz.nombre%></h1>
+    <p>Evalua tu conocimiento en <strong><%=@quiz.section.descripcion%></strong></p>
+  </header>
+  <section>
+    <div class="container">
+    <%= simple_form_for QuizStatus.new do |f| %>
+      <%= simple_fields_for :current_section do |o| %>
+       <%= o.input :r, :as => :hidden, input_html: {value: @quiz.section.id} %>
+      <% end %>
+      <p><%= arrayPreguntas[0] %></p>
+      <%= simple_fields_for :pregunta_a do |o| %>
+        <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[0][0] %>
+        <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[0][1] %>
+        <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[0][2] %>
+      <% end %> <br>
+      <p><%= arrayPreguntas[1] %></p>
+      <%= simple_fields_for :pregunta_b do |o| %>
+        <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[1][0] %>
+        <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[1][1] %>
+        <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[1][2] %>
+      <% end %> <br>
+      <p><%= arrayPreguntas[2] %></p>
+      <%= simple_fields_for :pregunta_c do |o| %>
+        <%= o.input :respuesta_1, as: :boolean, label: arrayRespuestas2[2][0] %>
+        <%= o.input :respuesta_2, as: :boolean, label: arrayRespuestas2[2][1] %>
+        <%= o.input :respuesta_3, as: :boolean, label: arrayRespuestas2[2][2] %>
+      <% end %> <br>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+    </div>
+  </section>
+<br>
+  <div class="btn"><%= link_to "Volver al modulo",section_path(@section)  %></div>
+</div>
+  <!-- <div class="body-quizz">
   
   <div id="quiz">
     <h1>Quiz</h1>
     <hr />
 
-    <!-- Aquí se van agregando dinamicamente las preguntas -->
     <h2 id="question"></h2>
 
 
-    <!-- En este div se van agregando dinamicamente las alternativas -->
     <div id="choices"></div>
     <hr />
 
     <footer>
-      <!-- Va a mostrar en qué pregunta estoy y cuántas preguntas hay -->
       <p id="progress"></p>
     </footer>
   </div>
-</div>
+</div> -->
 
     <!-- <script src="sweetalert2.all.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -31,7 +69,5 @@
       confirmButtonText: 'Cool'
     })</script>
 <script src="sweetalert2.all.min.js"></script> -->
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+<script src="app/javascript/plugins/main.js"></script>
 <div class="btn"><%= link_to "Volver al modulo",section_path(@section)  %></div>
