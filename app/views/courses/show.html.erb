@@ -1,6 +1,6 @@
-<div class="banner">
-  <div class="container_uno p-5">
-    <div class="row course">
+<div class="banner1">
+  <div class="p-5 bg-dark text-white">
+    <div class="row">
       <div class="col-6">
         <h1>
           <%= @course.titulo %>
@@ -13,7 +13,7 @@
         </h6>
       </div>
       <div class="col-6 text-center">
-        <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" style="height: 150px" title="YouTube video" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -22,31 +22,49 @@
 
 <div class="container">
   <div class="card1">
-    <div class="row justify-content-evenly">
+    <div class="row justify-content-between">
       <% @course.sections.each do |section| %>
-        <div class="carta">
-          <%= image_tag "Educacion-financiera.jpg" %>
-            <div class="calle">
-              <h2 class="text-center">
-                <%= section.nombre.capitalize %>
-              </h2>
-              <p>
-                <%= section.descripcion %>
-              </p>
-              <% unless user_signed_in? %>
-                <%= link_to "Iniciar Módulo" , new_user_session_path %>
-              <% else %>
-                <%= link_to "Iniciar Módulo" , section_path(section) %>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <% unless user_signed_in? %>
+              <%= link_to new_user_session_path do %>
+              <section class="cards3d p-3">
+                <figure class="card3d">
+                  <figcaption class="card-title3d">
+                    <%= image_tag "Educacion-financiera.jpg", style: "height: 150px; width: 100%; object-fit: contain;" %>
+                      <div class="calle">
+                        <h2 class="text-center">
+                          <%= section.nombre.capitalize %></h2>
+                        <p class="p-2 text-center"><%= section.descripcion %></p>
+                      </div>
+                  </figcaption>
+                </figure>
+              </section>
               <% end %>
-            </div>
+            <% else %>
+              <%= link_to section_path(section) do %>
+              <section class="cards3d p-3">
+                <figure class="card3d">
+                  <figcaption class="card-title3d">
+                    <%= image_tag "Educacion-financiera.jpg", style: "height: 150px; width: 100%; object-fit: contain;" %>
+                      <div class="calle">
+                        <h2 class="text-center">
+                          <%= section.nombre.capitalize %></h2>
+                        <p class="p-2 text-center"><%= section.descripcion %></p>
+                      </div>
+                  </figcaption>
+                </figure>
+              </section>
+              <% end %>
+            <% end %>
         </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
+</div>
 
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <% @course.reviews.each do |review| %>
       <p><%=  review.id %></p>
       <p><%= review.comentario %></p>
@@ -55,4 +73,5 @@
 
   <% end %>
   <br>
-</div>
+</div> -->
+
