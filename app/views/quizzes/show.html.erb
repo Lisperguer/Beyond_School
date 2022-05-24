@@ -1,8 +1,8 @@
 
-  <div class="body-quizz">
-  
+<div class="body-quizz">
+
   <div id="quiz">
-    <h1>Quiz</h1>
+    <h1>✏️ Quiz 📄</h1>
     <hr />
 
     <!-- Aquí se van agregando dinamicamente las preguntas -->
@@ -17,6 +17,9 @@
       <!-- Va a mostrar en qué pregunta estoy y cuántas preguntas hay -->
       <p id="progress"></p>
     </footer>
+  </div>
+  <div class="p-5">
+    <%= link_to "Volver al modulo",section_path(@section), class: "btn btn-outline-primary" %>
   </div>
 </div>
 
@@ -33,5 +36,3 @@
 <script src="sweetalert2.all.min.js"></script> -->
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<div class="btn"><%= link_to "Volver al modulo",section_path(@section)  %></div>
