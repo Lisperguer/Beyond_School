@@ -1,3 +1,4 @@
+
 export default class Ui {
   constructor() {}
 
@@ -26,6 +27,35 @@ export default class Ui {
 
       choicesContainer.append(button);
     }
+  }
+  showScores(score) {
+    const gameOverHTML = `
+      <h1>Result</h1>
+      <h2 id="score">Your scores: ${score}</h2>
+      `;
+    // <h2 id="score">Your scores: ${quiz.score}</h2>
+
+    const element = document.getElementById("quiz");
+    element.innerHTML = gameOverHTML;
+  }
+
+  aprobado(score){
+    // Insertar el sweetalert acá y llamar en el if del main
+  }
+
+  desaprovado(score){
+    //Insertar el sweetalert acá y poner en el else del main
+  }
+  /**
+  *
+  * @param {number} currentIndex;
+  * @param {number} total;
+  */
+  showProgress(currentIndex, total) {
+    var element = document.getElementById("progress");
+    element.innerHTML = `Question ${currentIndex} of ${total}`;
+
+
   }
   
 }

@@ -6,10 +6,17 @@ import Ui from "../models/Ui.js";
 
 const renderPage = (quiz, ui) => {
   if (quiz.isEnded()) {
-    ui.showScores(quiz.score);
+    if (quiz.score >= quiz.questions.length*0.8){
+      console.log("Has aprobado el curso")
+      ui.showScores(quiz.score);
+    }
+    else{
+      console.log("Has desaprovado el curso")
+    }
   } else {
     console.log(quiz);
     ui.showQuestion(quiz.getQuestionIndex().text);
+    ui.showProgress(quiz.questionIndex + 1, quiz.questions.length);
     ui.showChoices(quiz.getQuestionIndex().choices, (currenChoice) => {
       quiz.guess(currenChoice);
       renderPage(quiz, ui);
