@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'sections/show'
   get 'courses/index'
   get 'courses/show'
+  get 'quiz_statuses/quizzquestions', to: "quiz_statuses#quizzquestions"
   devise_for :users
   root to: 'pages#home'
 
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   resources :sections, only: [:show]
   resources :quizzes
   resources :quiz_statuses, only: [:create]
+
 end
