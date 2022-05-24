@@ -1,40 +1,139 @@
-<div class="banner" style="background-image: url('https://res.cloudinary.com/dydeg1evr/image/upload/v1652999187/development/background_xtnjjj.png')">
-  <div class="container_uno p-5">
 
-    <h1>Aprende de todo</h1>
-    <p>Lo que no se enseña en el colegio y más</p>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <div class="banner" style="background-image: url('https://res.cloudinary.com/dydeg1evr/image/upload/v1652999187/development/background_xtnjjj.png')">
+        <div class="container p-5">
+          <h1>Aprende de todo</h1>
+          <p>Lo que no se enseña en el colegio y más</p>
 
-    <% unless user_signed_in? %>
-      <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-outline-primary' %></a>
-    <% end %>
-    <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-outline-primary' %></a>
+          <% unless user_signed_in? %>
+            <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-primary' %></a>
+          <% end %>
+          <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-primary' %></a>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <div class="banner text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dgzbf6kp2/image/upload/c_scale,h_730,q_100,w_1213/v1653334439/development/home-real_i9vrcy.jpg);">
+        <div class="container p-5">
+          <h1>Aprende de todo</h1>
+          <p>Lo que no se enseña en el colegio y más</p>
 
+          <% unless user_signed_in? %>
+            <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-primary' %></a>
+          <% end %>
+          <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-primary' %></a>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item text-center" data-bs-interval="5000">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dgzbf6kp2/image/upload/c_scale,h_730,q_100,w_1213/v1653334449/development/home-real-3_ohvzlr.jpg);">
+        <div class="container p-5">
+          <h1>Aprende de todo</h1>
+          <p>Lo que no se enseña en el colegio y más</p>
+
+          <% unless user_signed_in? %>
+            <a href="#" class="btn-banner"> <%= link_to "Registarme" , new_user_registration_path,class: 'btn btn-primary' %></a>
+          <% end %>
+          <a href="#" class="btn-banner"> <%= link_to "Ver todos los Cursos" , courses_index_path,class: 'btn btn-primary' %></a>
+        </div>
+      </div>
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <div class="container">
 
-    <div class="card1">
-      <div class="row justify-content-between">
-      <% @courses.each do |course| %>
-        <div class="carta col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-          <% if course.photo.key %>
-            <%= cl_image_tag course.photo.key, style: "height: 200px; width: 100%;"%>
-          <% else %>
-          <%= image_tag "Educacion-financiera.jpg" %>
-          <% end %>
-          <div class="calle">
-            <h2 class="text-center"><%= course.titulo.capitalize %></h2>
-            <p>Duración: <%= course.duracion %> hrs.</p>
-            <% unless user_signed_in? %>
-              <%= link_to "Ver el Curso", new_user_session_path %>
-            <% else %>
-             <%= link_to "Ver el Curso", course_path(course) %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+<div class="f-padding-x f-padding-y-100 ds-section">
+  <div class="main-container">
+    <header class="text-center f-top f-bottom">
+      <p class="h1 f-text-36 no-margin">Así funciona BeyondSchool</p>
+      <div class="row text-center f-top" style="gap:25px;">
+      <div class="col-sm no-padding col-xs-12"><div class="box"><div class="top-space">
+      <%# <img height="129" src="/assets/svg/learn-code-69f62c8c13e07e612bcc085d1096c7a3cd1a51cf4188891698da1e2ea193385d.svg"> %>
+      <i class="fa-brands fa-leanpub fa-2xl"></i>
+      <p class="h1 f-top">Aprende desde 0</p>
+      <p class="no-margin-top no-margin-bottom h4 rb-normal container-70">
+      Ningun conocimiento es inalcanzable. Aprende los fundamentos básicos del curso que elijas.
+      </p>
       </div>
-    </div>
+      </div></div><div class="col-sm no-padding no-margin-xs col-xs-12"><div class="box"><div class="f-top-xs">
+      <div class="top-space">
+      <%# <img height="129" src="/assets/svg/learn-deeper-ee4e9763d6e82f3ffe4683d1c823fd211e3583e7a51f98bacd5dd168ae8801fa.svg"> %>
+      <i class="far fa-clock fa-2xl"></i>
+      <p class="h1 f-top">Estudia a tu ritmo y profundiza</p>
+      <p class="no-margin-top no-margin-bottom h4 rb-normal container-70">
+      ¿Quieres saber más que sólo los fundamentos? Profundiza el conocimiento más allá de lo básico con nuestra amplia gama de especializaciones.
+      </p>
+      </div>
+      </div>
+      </div></div><div class="col-sm no-padding col-xs-12"><div class="box"><div class="top-space">
+      <%# <img height="129" src="/assets/svg/prepare-c3094c27c18eb693116c68ebcae88073ea94eaebadd215e9f14819557ac933e6.svg"> %>
+      <i class="fas fa-tools fa-2xl"></i>
+      <p class="h1 f-top">Adquiere herramientas útiles para tu vida cotidiana</p>
+      <p class="no-margin-top no-margin-bottom h4 rb-normal container-70">
+      Consigue las habilidades que necesitas para tener una visión mas conciente del mundo en el que vivimos.
+      </p>
+      </div>
+      </div></div></div>
+    </header>
+  </div>
+</div>
 
+<div class="container">
+  <div class="card1">
+    <div class="row justify-content-between">
+      <% @courses.each do |course| %>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+          <% unless user_signed_in? %>
+            <%= link_to new_user_session_path do %>
+              <section class="cards3d p-3">
+                <figure class="card3d">
+                  <figcaption class="card-title3d">
+                    <% if course.photo.key %>
+                      <%= cl_image_tag course.photo.key, style: "height: 150px; width: 100%; object-fit: contain;"%>
+                    <% else %>
+                      <%= image_tag "Educacion-financiera.jpg" %>
+                    <% end %>
+                  <div class="calle">
+                    <h2 class="text-center" style="text-decoration: none"><%= course.titulo.capitalize %></h2>
+                    <p class="text-center" style="text-decoration: none">Duración: <%= course.duracion %> hrs.</p>
+                  </div>
+                </figcaption>
+            </figure>
+          </section>
+        <% end %>
+      <% else %>
+       <%= link_to course_path(course) do %>
+        <section class="cards3d p-3">
+          <figure class="card3d">
+            <figcaption class="card-title3d">
+              <% if course.photo.key %>
+                <%= cl_image_tag course.photo.key, style: "height: 200px; width: 100%; object-fit: contain;"%>
+              <% else %>
+                <%= image_tag "Educacion-financiera.jpg" %>
+              <% end %>
+            <div class="calle">
+              <h2 class="text-center"><%= course.titulo.capitalize %></h2>
+              <p class="text-center">Duración: <%= course.duracion %> hrs.</p>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
+    <% end %>
+    <% end %>
+        </div>
+  <% end %>
+</div>
+</div>
+</div>
  </div>

@@ -18,7 +18,7 @@ User.create(email: "flo.lema222@gmail.com", first_name: "Florencia", last_name: 
 curso0 = Course.create(titulo: "Educacion Sexual", duracion: 10, detalle: "La educación sexual es muy importante, ya que esta proporciona la información y las herramientas necesarias para disfrutar del sexo de manera responsable y saludable")
 curso1 = Course.create(titulo: "Educacion Financiera", duracion: 20, detalle: "La educación financiera es el proceso mediante el cual los individuos adquieren una mejor comprensión de los conceptos y productos financieros, desarrollan las habilidades necesarias para tomar decisiones  informadas, evaluar riesgos y oportunidades financieras")
 curso2 = Course.create(titulo: "Nutricion", duracion: 15, detalle: "La educación nutricional se refiere a la difusión de información útil acerca de los alimentos y sus nutrientes, pero su función no se reduce a ello, sino también a ofrecer las herramientas necesarias para mejorar los hábitos de alimentación y en consecuencia los procesos de nutrición.")
-curso3 = Course.create(titulo: "Introduccion a las nuevas tecnologias", duracion: 35, detalle: "Las 'nuevas tecnologías' son aquellas corrientes tecnológicas que están marcando un cambio en el modelo industrial y social en la economía global. En otras palabras, consiste en un conjunto de tecnologías de temprana creación o desarrollo que forman parte de la denominada 'revolución digital'.")
+curso3 = Course.create(titulo: "Nuevas Tecnologias", duracion: 35, detalle: "Las 'nuevas tecnologías' son aquellas corrientes tecnológicas que están marcando un cambio en el modelo industrial y social en la economía global. En otras palabras, consiste en un conjunto de tecnologías de temprana creación o desarrollo que forman parte de la denominada 'revolución digital'.")
 curso4 = Course.create(titulo: "Matematica", duracion: 50, detalle: "La mayoría de las personas pensamos que las matemáticas sólo se tratan de números para realizar operaciones como sumas, restas, multiplicaciones, fracciones, etc. Sin embargo, sus funciones están directamente relacionadas con nuestras actividades diarias.")
 
 url0 = "https://res.cloudinary.com/dydeg1evr/image/upload/v1652999187/development/sexualidad_qdiutd.jpg"
@@ -38,8 +38,8 @@ url4 = "https://res.cloudinary.com/dydeg1evr/image/upload/v1652999186/developmen
 curso4.photo.attach(io: URI.open(url4), filename: "mathematics_ovoibd.jpg", content_type: "image/jpeg")
 curso4.save
 
-url_section_1 = URI.open("https://www.youtube.com/watch?v=F6rruydac9I")
-url_section_2 = URI.open("https://www.youtube.com/watch?v=ALlSherR2ss")
+url_section_1 = "https://www.youtube.com/embed/F6rruydac9I"
+url_section_2 = "https://www.youtube.com/embed/ALlSherR2ss"
 
 section_1 = Section.create(nombre: "Modulo 1", descripcion: "Educación Financiera: 'La Inversión'", url_cloudinary: url_section_1, course: curso1)
 section_2 = Section.create(nombre: "Modulo 2", descripcion: "Educación Financiera: 'Calidad de Vida y Educación Financiera'", url_cloudinary: url_section_2, course: curso1)
