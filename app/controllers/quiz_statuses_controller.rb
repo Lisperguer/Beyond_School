@@ -10,6 +10,7 @@ class QuizStatusesController < ApplicationController
         #Hacer un if para ver si el contador es mayor a cierto puntaje
           #Si es mayor lanzar un alert y que el botón de ese alert tenga el redirect
           #Y si no, lanzar alert nuevamente y que el bóton de ese alert te lleve al mismo modulo
+
           flash[:notice] = 'Has pasado el módulo, felicidades!'
           redirect_to section_path(g)
       else
@@ -24,12 +25,4 @@ class QuizStatusesController < ApplicationController
       redirect_to section_path(h)
     end
   end
-
-  # def quizzquestions
-
-  #   respond_to do |format|
-  #     format.js
-
-  #   end
-  # end
 end
