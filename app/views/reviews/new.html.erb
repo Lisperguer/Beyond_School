@@ -1,6 +1,10 @@
-<%= simple_form_for [@course, @review] do |f| %>
-  <%= f.input :comentario %>
-  <%= f.input :rating %>
-  <%# <%= f.hidden_field :car_id, :value => params[:car_id] %>
-  <%= f.submit "Crear review", class: "btn btn-primary" %>
-<% end %>
+<div id="feedback-form">
+  <h2 class="header">¿Qué te pareció este curso?</h2>
+  <div>
+    <%= simple_form_for [@course, @review] do |f| %>
+      <%= f.input :comentario %>
+      <%= f.input :rating, as: :select, collection: [0,1,2,3,4,5], prompt: 'Califica este curso', label: false %>
+      <%= f.submit "Crear review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
