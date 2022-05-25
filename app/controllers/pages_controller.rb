@@ -4,4 +4,10 @@ class PagesController < ApplicationController
   def home
     @courses = Course.all
   end
+
+  def contactanos
+  end
+
+  def sobre_nosotros
+  end
 end
