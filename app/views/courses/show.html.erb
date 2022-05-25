@@ -24,6 +24,7 @@
   <div class="card1">
     <div class="row justify-content-between">
       <% @course.sections.each do |section| %>
+      
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
             <% unless user_signed_in? %>
               <%= link_to new_user_session_path do %>
@@ -64,14 +65,49 @@
 
 </div>
 
-<!-- <div class="container">
-  <% @course.reviews.each do |review| %>
-      <p><%=  review.id %></p>
-      <p><%= review.comentario %></p>
-      <p><%= review.rating %></p>
-      
-
-  <% end %>
+<div class="small-container pt-3">
+  <header class="text-center row flex-column middle-xs f-gap-medium">
+  <%# <img height="30" alt="Logo de Código Facilito" src="/assets/logo-cbf2a784ebee5d642aa7b8182df3e388d4feba0a23577eed1d2747fa05861f73.png">%>
+  <p class="h1 f-text-48 no-margin">
+  Reviews
   <br>
-</div> -->
+  </p>
+  </header>
+</div>
 
+<div class="container mb-3">
+  <% @course.reviews.each do |review| %>
+    <!-- <p><%=  review.id %></p> -->
+<div class="row justify-content-center">
+  <div class="col-6">
+
+    <div class="card-review">
+      <%# #Agregar source avatar estandar %>
+        <img src='' class="avatar-large" />
+        <div class="card-review-content text-center">
+          <p><small> <%= current_user.first_name %> <%= current_user.last_name %> </small></p>
+          <% count = 0 %>
+          <% 5.times do %>
+            <% if review.rating > count %>
+              <i class="fas fa-star"></i>
+            <% else %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% count += 1 %>
+          <% end %>
+          <p><%= review.comentario %></p>
+        </div>
+        <br>
+
+        <div class="card-review-actions text-center">
+          <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+          <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+    <% end %>
+    </div>
+  </div>
+</div>
