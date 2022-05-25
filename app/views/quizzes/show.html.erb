@@ -1,3 +1,4 @@
+
 <% arrayPreguntas = @quiz.preguntas.split(";") %>
 <% arrayRespuestas1 = @quiz.respuestas.split(";") %>
 <% arrayRespuestas2 = [] %>
@@ -43,7 +44,7 @@
   <!-- <div class="body-quizz">
   
   <div id="quiz">
-    <h1>Quiz</h1>
+    <h1>✏️ Quiz 📄</h1>
     <hr />
 
     <h2 id="question"></h2>
@@ -56,7 +57,11 @@
       <p id="progress"></p>
     </footer>
   </div>
-</div> -->
+  <div class="p-5">
+    <%= link_to "Volver al modulo",section_path(@section), class: "btn btn-outline-primary" %>
+  </div>
+</div>
+
 
     <!-- <script src="sweetalert2.all.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -69,5 +74,6 @@
       confirmButtonText: 'Cool'
     })</script>
 <script src="sweetalert2.all.min.js"></script> -->
+
 <script src="app/javascript/plugins/main.js"></script>
 <div class="btn"><%= link_to "Volver al modulo",section_path(@section)  %></div>
