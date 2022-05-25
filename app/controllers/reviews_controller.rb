@@ -8,6 +8,10 @@ class ReviewsController < ApplicationController
     @course = Course.find(params[:course_id])
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def create
     @review = Review.new(review_params)
     @course = Course.find(params[:course_id])
@@ -21,12 +25,27 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = Review.find(params[:id])
+    @course = @review.course
+    @review.update(review_params)
+
+    redirect_to course_path(@course)
+  end
+
+
   def destroy
     @review = review.find(params[:id])
     @course = @review.course
     @review.destroy
     redirect_to courses_path
   end
+
+
 
   private
 

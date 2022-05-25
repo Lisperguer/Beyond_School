@@ -68,8 +68,11 @@
   <% @course.reviews.each do |review| %>
       <p><%=  review.user.first_name %> dijo: "<%=review.comentario%>"</p>
       <p><%= review.rating %></p>
-
-
+      <% if review.user.email === current_user.email %>
+        <%=link_to "Eliminar review" , review_path(review), class:"btn btn-outline-primary", method: :delete %>
+        <%= review.id  %>
+        <%=link_to "Editar review" , edit_review_path(review), class:"btn btn-outline-primary", method: :update %>
+      <% end %>
   <% end %>
   <br>
 </div>
