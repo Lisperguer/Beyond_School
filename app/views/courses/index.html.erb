@@ -9,7 +9,7 @@
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small list-group">
             <% @courses.each do |course| %>
-              <li class="p-4" id="curso-link"><i class="fas fa-graduation-cap"></i><a class="text-dark fs-5" href="#<%= course.id %>"> <%= course.titulo %></a></li>
+              <li class="p-2" id="curso-link"><i class="fas fa-graduation-cap"></i><a class="text-dark fs-7" href="#<%= course.id %>"> <%= course.titulo %></a></li>
               <%# no me deja toma el text-decoration-none %>
             <% end %>
           </ul>
@@ -24,7 +24,7 @@
 
 <div class="col-9 mt-5 ml-2">
   <% @courses.each do |course| %>
-    <div class="justify-content-end mr-3"  id="<%= course.id %>">
+    <div class="justify-content-end mr-3" id="<%= course.id %>">
       <div>
         <div class="card-product mb-5">
           <div class="foto">
@@ -40,8 +40,8 @@
             </div>
               <div>
 
-              <%= link_to "Comenzar este curso", course_path(course), class: "btn btn-primary mt-3 float-end" %>
-              <%= link_to "Dejar una review", new_course_review_path(course), class: "btn btn-primary mt-3 float-end" %>
+              <%= link_to "Comenzar este curso", course_path(course), class: "btn btn-primary m-3 float-end" %>
+              <%= link_to "Dejar una review", new_course_review_path(course), class: "btn btn-primary m-3 float-end" %>
 
               </div>
           </div>
@@ -50,4 +50,13 @@
     </div>
   <% end %>
 </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <a href="/" class="btn btn-secondary btn-lg" id="botonVolver" role="button">Volver</a>
+    </div>
+  </div>
 </div>

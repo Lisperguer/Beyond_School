@@ -1,28 +1,25 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/", class: "navbar-brand" do %>
       <%= "BeyondSchool" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <a class="nav-link-courses" aria-current="page" href="/courses" style="color: rgba(0, 0, 0, 0.55)">Cursos</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Pagina principal", "/", class: "nav-link" %>
+            <%= link_to "Página principal", "/", class: "nav-link" %>
           </li>
-          <%# <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-
           <li class="nav-item dropdown">
             <%= image_tag "https://res.cloudinary.com/dydeg1evr/image/upload/v1653066537/development/avatar_qey0xu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%# agregar acciones al avatar %>
-              <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-              <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
