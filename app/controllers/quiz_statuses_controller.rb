@@ -1,4 +1,5 @@
 class QuizStatusesController < ApplicationController
+
   def create
     if params[:pregunta_a]["respuesta_1"] == "1" && params[:pregunta_b]["respuesta_2"] == "1" && params[:pregunta_c]["respuesta_3"] == "1"
       g = Section.where(id: params["current_section"]["r"].to_i + 1).first
@@ -9,7 +10,7 @@ class QuizStatusesController < ApplicationController
         #Hacer un if para ver si el contador es mayor a cierto puntaje
           #Si es mayor lanzar un alert y que el botón de ese alert tenga el redirect
           #Y si no, lanzar alert nuevamente y que el bóton de ese alert te lleve al mismo modulo
-          # sweetalertclick
+
           flash[:notice] = 'Has pasado el módulo, felicidades!'
           redirect_to section_path(g)
       else
