@@ -6,31 +6,27 @@
           <iframe width='420' height='345' src=<%=@section.url_cloudinary%> title="YouTube video" allowfullscreen ></iframe>
         </div>
       </div>
+      <div class="card my-4">
+        <div class="container">
+          <div class="row pt-2">
+            <%# <div class="col-2"></div> %>
+              <%# <div class="col-4"> %>
+                <%# <h5 class="card-header">Sabias que?</h5> %>
+                  <div class="card-body">
+                    <h5 class="card-title"><strong><%= @section.course.titulo %> - <%= @section.nombre %></strong></h5>
+                    <hr>
+                    <p class="card-text"><%= @section.course.detalle %></p>
+                    <a href="#"><%= link_to "Empezar quiz", quiz_path(@quiz), class: "btn btn-primary m-3 float-end", remote: true %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-
-    <div class="container">
-      <div class="row pt-5">
-        <div class="col-2">
-        </div>
-        <div class="col-4">
-          <p>Sabias qué?</p>
-          <%= @section.descripcion %>
-        </div>
-        <div class="col-4">
-          <div class="text-center">
-            <div>
-              <%= link_to "Empezar quiz" , quiz_path(@quiz) , class: "btn btn-primary", remote: true %>
-            </div>
-          </div>
-        </div>
-        <div class="col-2">
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"></script>
