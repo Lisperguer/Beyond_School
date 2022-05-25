@@ -18,6 +18,10 @@
     </ul>
 </div>
 
+<%# #Si el curso estatus está como true
+  #entonces mostrar una carta que muestra que ya está hecho
+  #Si no, entonces mostrar %>
+
 <div class="col-9 mt-5 ml-2">
   <% @courses.each do |course| %>
     <div class="justify-content-end mr-3"  id="<%= course.id %>">

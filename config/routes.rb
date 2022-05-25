@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :quizzes
   resources :quiz_statuses, only: [:create]
   resources :reviews, except: [:new, :create]
+  resources :quiz_statuses, only: [:update]
 end

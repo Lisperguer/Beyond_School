@@ -40,3 +40,8 @@ const renderPage = (quiz, ui) => {
  main();
   export default main
 
+
+section/8
+window.location (localhost:3000)
+
+/quizz/7
