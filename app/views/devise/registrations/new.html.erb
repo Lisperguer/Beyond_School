@@ -15,6 +15,7 @@
                   :label => 'Email',
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
+
       <div class="input-group">
         <%= f.input :first_name, required: true,
                     :label => 'Nombre',
@@ -24,10 +25,9 @@
                     :label => 'Apellido',
                     input_html: { autocomplete: "Apellido"}%>
         <%= f.input :age, required: true,
-                  :label => 'Edad',
-                  input_html: { autocomplete: "Edad", class: "edades"}%>
+                    :label => 'Edad',
+                    input_html: { autocomplete: "Edad", class: "edades"}%>
       </div>
-
 
       <%= f.input :address, required: true,
                   :label => 'Direccion',

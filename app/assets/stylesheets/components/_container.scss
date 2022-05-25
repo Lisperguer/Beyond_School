@@ -124,7 +124,7 @@ p {
 }
 
 .log-in {
-  height: 70vh;
+  min-height: 700px;
   box-shadow: 0 4px  10px rgb(164, 213, 245);
   margin: 30px auto;
   width: 600px;
@@ -148,7 +148,7 @@ p {
 }
 
 .registrarse h2 {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .new_user input {
@@ -163,4 +163,22 @@ p {
 
 .edades {
   width: 100px;
+}
+
+.olvidar {
+  min-height: 600px;
+  box-shadow: 0 4px  10px rgb(164, 213, 245);
+  margin: 30px auto;
+  min-width: 600px;
+  // background-color: rgb(118, 191, 240);
+  border-radius: 6px;
+  background-color: white;
+
+}
+.olvidar img{
+  display: block;
+  margin: 0px auto;
+ }
+.olvidar h2 {
+  margin-top: 0;
 }
