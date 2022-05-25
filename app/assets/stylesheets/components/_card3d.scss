@@ -26,7 +26,7 @@
     place-content: center;
     align-items: center;
     display: flex;
-    height: 350px;
+    height: 300px;
     width: 300px;
     background: none
     center no-repeat; /*Setting a background image via url. The position of the background will be center and the image will be set so that it does not repeat. */
@@ -59,7 +59,7 @@
 .card-title3d{
     color:#243038;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    // text-shadow: 0 0 10px rgba(0, 0, 0, .5);
     // transform: translateY(-10%);
     transition: transform 0.5s;
 }
