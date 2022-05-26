@@ -7,11 +7,15 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="nav-link-courses" aria-current="page" href="/courses" style="color: rgba(0, 0, 0, 0.55)">Cursos</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <li class="nav-item d-flex">
+            <%= link_to "Cursos", courses_path, class: "nav-link" %>
+            <%= link_to "Nosotros", "/nosotros", class: "nav-link" %>
+            <%= link_to "Contacto", "/contacto", class: "nav-link" %>
+          </li>
           <li class="nav-item active">
             <%= link_to "Página principal", "/", class: "nav-link" %>
           </li>
@@ -19,12 +23,29 @@
             <%= image_tag "https://res.cloudinary.com/dydeg1evr/image/upload/v1653066537/development/avatar_qey0xu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%# agregar acciones al avatar %>
+              <%= button_to "Perfil", "#", class: "dropdown-item" %>
+              <%= button_to "Mis Cursos", "#", class: "dropdown-item" %>
+              <%= button_to "Mis Comentarios", "#", class: "dropdown-item" %>
               <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
+          <li class="nav-item d-flex">
+            <%= link_to "Cursos", courses_path, class: "nav-link" %>
+            <%= link_to "Nosotros", "/nosotros", class: "nav-link" %>
+            <%= link_to "Contacto", "/contacto", class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%# agregar acciones al avatar %>
+              <%= button_to "Perfil", "#", class: "dropdown-item" %>
+              <%= button_to "Mis Cursos", "#", class: "dropdown-item" %>
+              <%= button_to "Mis Comentarios", "#", class: "dropdown-item" %>
+              <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
           </li>
         <% end %>
       </ul>
