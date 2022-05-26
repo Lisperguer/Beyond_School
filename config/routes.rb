@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get "/contacto", to: "pages#contacto"
   get "/nosotros", to: "pages#nosotros"
 
-
   resources :courses, only: [:index, :show, :my_course] do
     resources :reviews, only: [:new, :create]
   end
