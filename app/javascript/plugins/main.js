@@ -41,7 +41,7 @@ const renderPage = (quiz, ui) => {
   export default main
 
 
-section/8
-window.location (localhost:3000)
+// section/8
+// // window.location (localhost:3000)
 
-/quizz/7
+// /quizz/7

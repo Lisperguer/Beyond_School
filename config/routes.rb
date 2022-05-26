@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/contacto", to: "pages#contacto"
   get "/nosotros", to: "pages#nosotros"
+  get "courses/my_courses", to: "courses#my_courses"
+
 
   resources :courses, only: [:index, :show, :my_course] do
     resources :reviews, only: [:new, :create]
