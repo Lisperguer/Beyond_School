@@ -1,0 +1,38 @@
+
+
+<div class ="container mt-5">
+    <h3 class="p-3">Mis cursos Realizados </h3>
+    <% @courses.each do |course| %>
+      <% if user_signed_in? %>
+        <% current_user.user_courses.each do |curso| %>
+          <% if course.id == curso.course_id && curso.status%>
+
+            <div class="justify-content-end mr-3" id="<%= course.id %>">
+              <div class="card-product mb-5" id="absolute">
+                <div class="foto fotoindex">
+                  <%= cl_image_tag course.photo.key%>
+                </div>
+                <div class="card-product-infos p-5">
+                  <div class="card-superior">
+                    <h2><%=course.titulo%></h2>
+                    <p> <strong>Duracion del curso </strong><%=course.duracion%> minutos</p>
+                  </div>
+                  <div class="card-inferior">
+                    <p><%= course.detalle.truncate(220) %></p>
+                  </div>
+                  <%= link_to "Rehacer curso", course_path(course), class: "btn btn-primary m-3 float-end" %>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+
+</div>
+

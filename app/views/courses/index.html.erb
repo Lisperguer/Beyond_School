@@ -46,10 +46,11 @@
               <%= link_to "Comenzar este curso", course_path(course), class: "btn btn-primary m-3 float-end" %>
 
             <% if user_signed_in? %>
-              <% current_user.user_courses.each do |curso| %>
-                <% if course.id == curso.course_id && curso.status%>                  
+             <% current_user.user_courses.each do |curso| %>
+                <% if course.id == curso.course_id && curso.status%>
+                  <%= image_tag("https://res.cloudinary.com/dydeg1evr/image/upload/v1653594877/development/Red_and_Gold_Transparent_Rosette_Ribbon_PNG_Clipart_jdpjcf.png", :id=>"relative") %>
                   <%= link_to "Dejar una review", new_course_review_path(course), class: "btn btn-primary m-3 float-end" %>
-                  <%=  cl_image_tag("Red_and_Gold_Transparent_Rosette_Ribbon_PNG_Clipart_ap6y2z.png", :id=>"relative") %>                        
+
                 <% end %>
 
               <% end %>

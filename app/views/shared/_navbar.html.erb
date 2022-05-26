@@ -25,7 +25,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%# agregar acciones al avatar %>
               <%= button_to "Perfil", "#", class: "dropdown-item" %>
-              <%= button_to "Mis Cursos", "#", class: "dropdown-item" %>
+              <%= link_to "Mis Cursos", "/courses/my_courses", class: "dropdown-item" %>
               <%= button_to "Mis Comentarios", "#", class: "dropdown-item" %>
               <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
