@@ -188,9 +188,17 @@ p {
   position: relative;
   width: 93px;
   top: -198px;
-  right: -631px;
+  right: -575px;
 }
 
 #absolut {
   position: absolute;
+}
+
+#absolute img {
+  object-fit: contain;
+}
+
+.fotoindex {
+  width: 280px;
 }
