@@ -1,1 +1,49 @@
-<h1>contactanos</h1>
+<div class="container registrarse" style="width: 60%">
+  <h2 class='text-center my-3'>Contacto</h2>
+<div class="container">
+    <div class="" id="form_container">
+        <p>
+           Escribe tu mensaje aqui. Te responderemos a la brevedad.
+        </p>
+        <form role="form" method="post" id="reused_form">
+
+            <div class="row">
+                <div class="col-sm-12 form-group my-2">
+                    <label for="message">
+                        Mensaje:</label>
+                    <textarea class="form-control" type="textarea" id="message" name="message" maxlength="6000" rows="7"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 form-group my-2">
+                    <label for="name">
+                        Nombre y Apellido:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="col-sm-6 form-group my-2">
+                    <label for="email">
+                        Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12 form-group my-2">
+                    <button type="#" class="btn btn-primary" >Enviar</button>
+                </div>
+            </div>
+
+        </form>
+        <div id="success_message" style="width:100%; height:100%; display:none; ">
+            <h3>Mensaje enviado!</h3>
+        </div>
+        <div id="error_message"
+                style="width:100%; height:100%; display:none; ">
+                    <h3>Error</h3>
+                    Disculpa, tenemos un error al enviar el mensaje. Intenta nuevamente.
+
+        </div>
+    </div>
+</div>
+</div>
