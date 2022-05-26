@@ -22,7 +22,7 @@ class QuizStatusesController < ApplicationController
 
         # @Actualizacion = current_user.user_course.status = true;
         # @Actualizacion.save
-        redirect_to section_path(id: params["current_section"]["r"].to_i)
+        redirect_to courses_path
       end
     else
       # si desaprobe =>
