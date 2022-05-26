@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get 'quiz_statuses/quizzquestions', to: "quiz_statuses#quizzquestions"
   devise_for :users
   root to: 'pages#home'
-  get "/contactanos", to: "pages#contactanos"
-  get "/sobre_nosotros", to: "pages#sobre_nosotros"
+  get "/contacto", to: "pages#contacto"
+  get "/nosotros", to: "pages#nosotros"
 
 
   resources :courses, only: [:index, :show, :my_course] do
