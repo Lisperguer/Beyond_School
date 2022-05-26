@@ -29,7 +29,7 @@
       <div>
 
 
-        <div class="card-product mb-5">
+        <div class="card-product mb-5" id="absolute">
           <div class="foto">
             <%= cl_image_tag course.photo.key%>
           </div>
@@ -44,11 +44,14 @@
               <div>
 
               <%= link_to "Comenzar este curso", course_path(course), class: "btn btn-primary m-3 float-end" %>
+
             <% if user_signed_in? %>
               <% current_user.user_courses.each do |curso| %>
-                <% if course.id == curso.course_id && curso.status%>
+                <% if course.id == curso.course_id && curso.status%>                  
                   <%= link_to "Dejar una review", new_course_review_path(course), class: "btn btn-primary m-3 float-end" %>
+                  <%=  cl_image_tag("Red_and_Gold_Transparent_Rosette_Ribbon_PNG_Clipart_ap6y2z.png", :id=>"relative") %>                        
                 <% end %>
+
               <% end %>
             <% end %>
 
@@ -69,4 +72,3 @@
     </div>
   </div>
 </div>
-
